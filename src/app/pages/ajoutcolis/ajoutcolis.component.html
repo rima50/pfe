@@ -1,0 +1,167 @@
+<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 600px; background-image: url(assets/img/theme/profile-cover.jpg); background-size: cover; background-position: center top;">
+    <!-- Mask -->
+    <span class="mask bg-gradient-danger opacity-8"></span>
+    <!-- Header container -->
+    <div class="container-fluid d-flex align-items-center">
+      <div class="row">
+        <div class="col-lg-7 col-md-10">
+          <h1 class="display-2 text-white">Hello </h1>
+          <p class="text-white mt-0 mb-5">This is your profile page. You can see the progress you've made with your work and manage your projects or assigned tasks</p>
+          <a href="#!" class="btn btn-info">Edit</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid mt--7">
+    <div class="row">
+      
+      <div class="col-xl-8 order-xl-1">
+        <div class="card bg-secondary shadow">
+          <div class="card-header bg-white border-0">
+            <div class="row align-items-center">
+              <div class="col-8">
+                <h3 class="mb-0">My account</h3>
+              </div>
+              <div class="col-4 text-right">
+                <a href="#!" class="btn btn-sm btn-primary">Settings</a>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+        
+             <form (ngSubmit)="onSubmit()" #colisForm="ngForm">
+        <div class="form-group">
+          <label for="prenom">prenom</label>
+          <input type="text" [(ngModel)]="l1.prenom" 
+            class="form-control" 
+            id="prenom" 
+            name="prenom" 
+            placeholder="Saisire prenom"
+            required #Codecolis="ngModel">
+        </div>
+        <div class="form-group">
+            <label for="nom">nom</label>
+            <input type="text" [(ngModel)]="l1.nom" 
+              class="form-control" 
+              id="nom" 
+              name="nom" 
+              placeholder="Saisire nom"
+              required #Codecolis="ngModel">
+          </div>
+     <!--    <div class="form-group">
+            <label for="Codecolis">Codecolis</label>
+            <input type="text" [(ngModel)]="l1.id" 
+              class="form-control" 
+              id="Codecolis" 
+              name="nCodecolis" 
+              placeholder="Saisire Codecolis"
+              required #Codecolis="ngModel">
+          </div> -->
+      
+        <div class="form-group">
+          <label for="numtel">numtel</label>
+          <input type="text" [(ngModel)]="l1.numtel" 
+            class="form-control" 
+            id="numtel" 
+            name="numtel" 
+            placeholder="Saisire numtel"
+            required #numtel="ngModel">
+        </div>
+        
+        <div class="form-group">
+          <label for="adresse">adresse</label>
+          <input type="text" [(ngModel)]="l1.adresse" 
+            class="form-control" 
+            id="adresse" 
+            name="adresse" 
+            placeholder="Saisire votre adresse"
+            required #adresse="ngModel">
+        </div>
+       
+  
+  
+  
+        
+  
+  
+          <div class="form-group">
+            <label for=" deuxiemenumtel"> deuxiemenumtel</label>
+            <input type="text" [(ngModel)]="l1.deuxiemenumtel" 
+              class="form-control" 
+              id=" deuxiemenumtel" 
+              name=" deuxiemenumtel" 
+              placeholder="Saisire  deuxiemenumtel"
+              required #deuxiemenumtel="ngModel">
+          </div>
+        
+        <div class="form-group">
+          <label for=" adressepickup"> adressepickup</label>
+          <input type="text" [(ngModel)]="l1.adressepickup" 
+            class="form-control" 
+            id=" adressepickup" 
+            name=" adressepickup" 
+            placeholder="Saisire  adressepickup"
+            required #adressepickup="ngModel">
+        </div>
+  
+        <div class="form-group">
+            <label for=" gouvernorat"> gouvernorat</label>
+            <input type="text" [(ngModel)]="l1.gouvernorat" 
+              class="form-control" 
+              id=" gouvernorat" 
+              name="gouvernorat" 
+              placeholder="Saisire  gouvernorat"
+              required #gouvernorat="ngModel">
+          </div>
+
+
+
+          <div class="form-group">
+            <label for="designationproduits">designationproduits</label>
+            <input type="text" [(ngModel)]="l1.designationproduits" 
+              class="form-control" 
+              id="designationproduits" 
+              name="designationproduits" 
+              placeholder="Saisiredesignationproduits"
+              required #designationproduits="ngModel">
+          </div>
+
+
+
+          <div class="form-group">
+            <label for=" remarque"> remarque</label>
+            <input type="text" [(ngModel)]="l1.remarque" 
+              class="form-control" 
+              id=" remarque" 
+              name="remarque" 
+              placeholder="Saisire remarque"
+              required #remarque="ngModel">
+          </div>
+          <div class="form-group">
+            <label for=" adressemail">adressemail</label>
+            <input type="text" [(ngModel)]="l1.adressemail" 
+              class="form-control" 
+              id=" adressemail" 
+              name="adressemail" 
+              placeholder="Saisire adressemail"
+              required #adressemail="ngModel">
+          </div>
+          <div class="form-group">
+            <label for="montant">montant</label>
+            <input type="text" [(ngModel)]="l1.montant" 
+              class="form-control" 
+              id="montant" 
+              name="montant" 
+              placeholder="Saisire montant"
+              required #montant="ngModel">
+          </div>
+       
+         <button type="submit" [disabled]="!livreurForm.form.valid" 
+          class="btn btn-info">Submit</button>
+      </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

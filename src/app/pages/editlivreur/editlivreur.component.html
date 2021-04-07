@@ -1,0 +1,93 @@
+
+<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 600px; background-image: url(assets/img/theme/profile-cover.jpg); background-size: cover; background-position: center top;">
+    <!-- Mask -->
+    <span class="mask bg-gradient-danger opacity-8"></span>
+    <!-- Header container -->
+    <div class="container-fluid d-flex align-items-center">
+      <div class="row">
+        <div class="col-lg-7 col-md-10">
+          <h1 class="display-2 text-white">Hello </h1>
+          <p class="text-white mt-0 mb-5">This is your profile page. You can see the progress you've made with your work and manage your projects or assigned tasks</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid mt--7">
+    <div class="row">
+      
+      <div class="col-xl-8 order-xl-1">
+        <div class="card bg-secondary shadow">
+          <div class="card-header bg-white border-0">
+            <div class="row align-items-center">
+              <div class="col-8">
+                <h3 class="mb-0">My account</h3>
+              </div>
+              <div class="col-4 text-right">
+                <a href="#!" class="btn btn-sm btn-primary">Settings</a>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <form (ngSubmit)="onSubmitt()" >
+              <div class="form-group">
+                <label for="name">Nom</label>
+                <input type="text" [(ngModel)]="l1.nom" 
+                  class="form-control" 
+                  id="name" 
+                  name="name" 
+                  value="l1.nom"
+                 >
+              </div>
+              
+              <div class="form-group">
+                <label for="prenom">prenom</label>
+                <input type="text" [(ngModel)]="l1.prenom" 
+                  class="form-control" 
+                  id="prenom" 
+                  name="prenom" 
+                  placeholder=""
+                  >
+              </div>
+           
+              <div class="form-group">
+                <label for="adresse">adresse</label>
+                <input type="text" [(ngModel)]="l1.adresse" 
+                  class="form-control" 
+                  id="adresse" 
+                  name="adresse" 
+                  placeholder=""
+                  >
+              </div>
+             
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" [(ngModel)]="l1.email" 
+                  class="form-control" 
+                  id="email" 
+                  name="email" 
+                  placeholder=""
+                  >
+               
+              </div>
+              <div class="form-group">
+                <label for="vehicule">vehicule</label>
+                <input type="text" [(ngModel)]="l1.vehicule" 
+                  class="form-control" 
+                  id="vehicule" 
+                  name="vehicule" 
+                  placeholder=""
+                
+              >
+              </div>
+              
+              <button type="submit"  
+                class="btn btn-info">Submit</button>
+  
+                
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

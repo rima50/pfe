@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="forms-container">
+      <div class="signin-signup">
+        <form [formGroup]="loginForm" (ngSubmit)="login()" action="#" class="sign-in-form">
+          <h2 class="title">Sign in</h2>
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Username" id="user_name" class="form-control" [formControlName]="'username'" name="user_name" required
+            autofocus/>
+            <span *ngIf="!loginForm.get('username').valid && loginForm.get('username').touched">
+           
+           </span>  
+          </div>
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Password"  id="password" class="form-control" 
+            [formControlName]="'password'" name="password" required/>
+            <span *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched">
+        
+            </span> 
+          </div>
+          <input type="submit" value="Login" class="btn" />
+          <a routerLink ="/ssignup">
+              <button class="btn " id="sign-up-btn" >
+                    Sign up
+                  </button></a>
+                  <div class="login-failed" *ngIf='this.isError'>
+                    <p class="login-failed-text">Login Failed Please check your credentials and try again.</p>   
+               </div>
+               <a routerLink ="/reset">mot de passe oublie?</a>
+              
+        </form>
+        
+        </div>
+        </div>
+  
+    <div class="panels-container">
+      <div class=" left-panel">
+        <div class="content">
+          
+         
+      
+         
+        </div>
+        </div>
+      </div>
+</div>

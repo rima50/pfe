@@ -1,0 +1,41 @@
+<div class="example-wrapper">
+    <button kendoButton *ngIf="!opened" (click)="open()">Open window</button>
+    <p *ngIf="dataSaved">Data has been saved</p>
+    <kendo-window title="Please provide additional data" *ngIf="opened" (close)="close()" [minWidth]="250" [width]="450">
+
+   
+
+
+    <form (ngSubmit)="onSubmit()" #reclamationForm="ngForm">
+    
+      <fieldset class="form-group"> 
+        <label for="prenom">Votre preNom:</label> 
+        <input id="prenom" [(ngModel)]="rec.prenom" name="prenom"class="k-textbox" type="text" 
+        placeholder="Votre prenom" required   #prenom="ngModel"> 
+      </fieldset> 
+        
+      <fieldset class="form-group"> 
+        <label for="email">Adresse Electronique:</label> 
+        <input id="email" [(ngModel)]="rec.email" class="k-textbox" name="email"
+        type="email" placeholder="Enter email" required  #email="ngModel"> 
+      </fieldset> 
+        
+      <fieldset class="form-group"> 
+        <label for="message">Votre Message:</label> 
+        <textarea id="message" [(ngModel)]="rec.message" class="k-textbox" name="message"
+        rows="3" placeholder="Votre message" required  #message="ngModel"></textarea> 
+      </fieldset>  
+
+
+      <fieldset class="form-group text-center"> 
+        <button class="k-button k-danger" type="submit" [disabled]="!reclamationForm.form.valid" >Envoyer le Message</button> 
+
+        <div class="text-right">
+            <button type="button" class="k-button" (click)="close()">Cancel</button>
+            <!-- <button type="button" class="k-button k-primary" (click)="submit()">Submit</button> -->
+        </div>
+      </fieldset> 
+     
+    </form> 
+    </kendo-window>
+  </div>
