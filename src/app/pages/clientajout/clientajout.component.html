@@ -1,0 +1,89 @@
+<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 600px; background-image: url(assets/img/theme/profile-cover.jpg); background-size: cover; background-position: center top;">
+    <!-- Mask -->
+    <span class="mask bg-gradient-danger opacity-8"></span>
+    <!-- Header container -->
+    <div class="container-fluid d-flex align-items-center">
+      <div class="row">
+        <div class="col-lg-7 col-md-10">
+          <h1 class="display-2 text-white">Hello </h1>
+          <p class="text-white mt-0 mb-5">This is your profile page. You can see the progress you've made with your work and manage your projects or assigned tasks</p>
+          <a href="#!" class="btn btn-info">Edit</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid mt--7">
+    <div class="row">
+      
+      <div class="col-xl-8 order-xl-1">
+        <div class="card bg-secondary shadow">
+          <div class="card-header bg-white border-0">
+            <div class="row align-items-center">
+              <div class="col-8">
+                <h3 class="mb-0">My account</h3>
+              </div>
+              <div class="col-4 text-right">
+                <a href="#!" class="btn btn-sm btn-primary">Settings</a>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+             <form (ngSubmit)="onSubmit()" #clientForm="ngForm">
+        <div class="form-group">
+          <label for="nomsociete">nomsociete</label>
+          <input type="text" [(ngModel)]="client.nomsociete" 
+            class="form-control" 
+            id="nomsociete" 
+            name="nomsociete" 
+            placeholder="Saisire nom de societe"
+            required #nomsociete="ngModel">
+        </div>
+      
+        <div class="form-group">
+          <label for="adresseemail">adresseEmail</label>
+          <input type="text" [(ngModel)]="client.adresseemail" 
+            class="form-control" 
+            id="adresseemail" 
+            name="adresseemail" 
+            placeholder="Saisire l'adresse mail "
+            required #prenom="ngModel">
+        </div>
+       
+        <div class="form-group">
+          <label for="adressephysique">adressePhysique</label>
+          <input type="text" [(ngModel)]="client.adressephysique" 
+            class="form-control" 
+            id="adresse" 
+            name="adresse" 
+            placeholder="Saisire votre adressephysique"
+            required #adresse="ngModel">
+        </div>
+       
+  
+  
+  
+        
+  
+  
+          <div class="form-group">
+            <label for="email">immatriculation</label>
+            <input type="text" [(ngModel)]="client.immatriculation" 
+              class="form-control" 
+              id="immatriculation" 
+              name="immatriculation" 
+              placeholder="Saisire votre immatriculation "
+              required #email="ngModel">
+          </div>
+      
+     
+  
+      
+         <button type="submit" [disabled]="!clientForm.form.valid" 
+          class="btn btn-info">Submit</button>
+      </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

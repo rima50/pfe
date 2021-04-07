@@ -1,0 +1,103 @@
+
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+    <div class="container-fluid">
+      <div class="header-body">
+        <!-- Card stats -->
+       
+  <!-- Page content -->
+  <div class="container-fluid mt--7">
+    <!-- Table -->
+    <div class="row">
+      <div class="col">
+        <div class="card shadow">
+          <div class="card-header border-0">
+            <h3 class="mb-0">liste colis En attende</h3>
+          </div>
+          
+          <form class="search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto" #f="ngForm" (ngSubmit)="onChercher(f.value)">
+            <div class="form-group mb-0" [ngClass]="{ 'focused': focus === true }">
+              <div class="input-group input-group-alternative">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-search"></i></span>
+                </div>
+                <input class="form-control" placeholder="Search" type="text" (focus)="focus = true"
+                (blur)="focus = false" name="keyword" ngModel>
+              </div>
+            </div>
+          </form>
+  
+  
+          
+      
+          <div class="table-responsive">
+            <table class="table align-items-center table-flush">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col">Codecolis</th>
+                  <th scope="col">prenom</th>
+                  <th scope="col">nom</th>
+                  <th scope="col"> numtel</th>
+  
+                   <th scope="col"> deuxiéme numtel</th>
+                  <th scope="col">adresse</th>
+                  <th scope="col">adressemail</th>
+                 
+                  <th scope="col">codepostal</th>
+                  <th scope="col">adressepickup</th>
+                  <th scope="col"> gouvernorat</th>
+  
+                  <th scope="col">designationproduit</th>
+                  <th scope="col">remarque</th>
+                  
+                 <th scope="col"> prix </th>
+                 <th scope="col"> etat colis</th>
+                 
+               
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let colis of coliers">
+                  <td>{{colis.id }}</td>
+                  <td>{{colis.prenom }}</td>
+                  <td>{{ colis.nom }}</td>
+                  <td>{{ colis.numtel }}</td>
+                  <td>{{ colis.deuxiemenumtel}}</td>
+                  <td>{{ colis.adresse}}</td>
+                  <td><a href="mailto:{{ colis.adressemail }}">{{ colis.adressemail }}</a></td>
+                  <td>{{ colis.codepostal}}</td>
+                  <td>{{ colis.adressepickup}}</td>
+                  <td>{{ colis.gouvernorat}}</td>
+                
+                  <td>{{ colis.designationproduits}}</td>
+  
+                  <td>{{ colis.remarque}}</td>
+                
+                  <td>{{ colis.montant}}</td>
+                
+               <td >
+                   <div *ngFor="let etat of colis.etatcolis ; let i= index">
+                    <p *ngIf="i == (colis.etatcolis.length -1) ">
+                        {{etat.etat_colis}}
+                    </p>
+ 
+                   </div>
+                  
+               </td>
+               
+    
+                </tr>
+              </tbody>
+            </table>
+  
+            
+           
+            
+        
+  
+  
+      
+      
+      </div>
+    </div>
+  
+  

@@ -1,0 +1,47 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+    <div class="container-fluid">
+      <div class="header-body">
+        <!-- Card stats -->
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid mt--7">
+    <!-- Table -->
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <div class="card shadow">
+          <div class="card-header border-0">
+            <h3 class="text-center">liste des reclamations </h3>
+          </div>
+ 
+          <div class="table-responsive">
+            <table class="table align-items-center table-flush">
+              <thead class="thead-light">
+                <th scope="col"> nomsociete</th>
+  
+                <th scope="col">emailSociete</th>
+                <th scope="col">message</th>
+                
+              </thead>
+              <tbody>
+                
+                  <tr *ngFor="let rec of reclamations">
+                    <td>{{ rec.prenom }}</td>
+                    <td>{{ rec.email }}</td>
+                    
+                    <td>{{ rec.message }}</td>
+                  
+               
+                </tr>
+              </tbody>
+            </table>
+      </div> 
+    </div> 
+  </div> 
+
+
+</div>
+
+  <br><br>

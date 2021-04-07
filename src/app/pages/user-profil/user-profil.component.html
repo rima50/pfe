@@ -1,0 +1,197 @@
+<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 600px; background-image: url(assets/img/theme/profile-cover.jpg); background-size: cover; background-position: center top;">
+  <!-- Mask -->
+  <span class="mask bg-gradient-danger opacity-8"></span>
+  <!-- Header container -->
+  <div class="container-fluid d-flex align-items-center">
+    <div class="row">
+      <div class="col-lg-7 col-md-10">
+        <h1 class="display-2 text-white">Hello {{information.username}} </h1>
+        <p class="text-white mt-0 mb-5">This is your profile page. You can see the progress you've made with your work and manage your projects or assigned tasks</p>
+        <a href="#!" class="btn btn-info">Edit profile</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid mt--7">
+  <div class="row">
+    <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
+      <div class="card card-profile shadow">
+        <div class="row justify-content-center">
+          <div class="col-lg-3 order-lg-2">
+            <div class="card-profile-image">
+              <a href="javascript:void(0)">
+                
+                <img src="assets/img/theme/team-4-800x800.jpg" class="rounded-circle" *ngIf="!imageUrl2">
+                <img [src]="imageUrl2" class="rounded-circle" *ngIf="imageUrl2">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
+         
+          <div class="d-flex justify-content-between">
+      
+            
+            <!-- <a href="javascript:void(0)" class="btn btn-sm btn-info mr-4">Connect</a>
+            <a href="javascript:void(0)" class="btn btn-sm btn-default float-right">Message</a> -->
+          </div>
+        </div>
+        <div class="card-body pt-0 pt-md-4">
+          <div class="row">
+            <div class="col">
+              <div class="card-profile-stats d-flex justify-content-center mt-md-5">
+                  <button class="btn btn-sm btn-info mr-4" > <input   type="file" (change)="onFileChanged2($event)"></button>      
+              </div>
+            </div>
+          </div>
+          <div class="text-center">
+            <h3>
+              {{information.prenom}}<span class="font-weight-light">, {{information.nom}}</span>
+            </h3>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+    <div class="col-xl-8 order-xl-1">
+      <div class="card bg-secondary shadow">
+        <div class="card-header bg-white border-0">
+          <div class="row align-items-center">
+            <div class="col-8">
+              <h3 class="mb-0">My account</h3>
+            </div>
+            <div class="col-4 text-right">
+              
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <form  >
+            <h6 class="heading-small text-muted mb-4">User information</h6>
+            <div class="pl-lg-4">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-username">Username</label>
+                    <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Username" value="{{information.username}} ">
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-email">Email address</label>
+                    <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="{{information.email}} ">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-first-name">Prenom</label>
+                    <input type="text" [(ngModel)]="profile.prenom" id="input-first-name"  class="form-control form-control-alternative" placeholder="First name" value="{{information.prenom}}">
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-last-name">Nom</label>
+                    <input type="text"  [(ngModel)]="profile.nom" id="input-last-name"  class="form-control form-control-alternative" placeholder="Last name" value="{{information.nom}}">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr class="my-4" />
+            <!-- Address -->
+            <h6 class="heading-small text-muted mb-4">Contact information</h6>
+            <div class="pl-lg-4">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-address">Address</label>
+                    <input id="input-address"  [(ngModel)]="profile.adresse"  class="form-control form-control-alternative" [ngModelOptions]="{standalone: true}" placeholder="Home Address" value="{{information.adresse}}" type="text">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-city">ville</label>
+                    <input type="text"  [(ngModel)]="profile.ville" id="input-city" [ngModelOptions]="{standalone: true}" class="form-control form-control-alternative" placeholder="City" value="{{information.ville}}">
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-country">gouvernorat</label>
+                    <input type="text" [(ngModel)]="profile.gouvernorat"  id="input-country" [ngModelOptions]="{standalone: true}" class="form-control form-control-alternative" placeholder="Country" value="{{information.gouvernorat}}">
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-country">Postal code</label>
+                    <input type="number" [(ngModel)]="profile.codepostal" id="input-postal-code"[ngModelOptions]="{standalone: true}" class="form-control form-control-alternative" placeholder="{{information.codepostal}}">
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-country">tel</label>
+                    <input type="number" [(ngModel)]="profile.tel" id="input-postal-code" [ngModelOptions]="{standalone: true}" class="form-control form-control-alternative" placeholder="{{information.tel}}">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          <button class="btn btn-sm btn-primary"  type="submit"  (click)="editprofile()">Enregistrer</button>
+            <hr class="my-4" />
+            <h6 class="heading-small text-muted mb-4">User information</h6>
+            <div class="pl-lg-4">
+              <div class="row">
+                
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-email">Email address</label>
+                    <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="{{information.email}} ">
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-ancienpassword">Ancien Password</label>
+                    <input type="text" [(ngModel)]="profile.prenom" id="input-ancienpassword"  class="form-control form-control-alternative" placeholder="Ancien password" value="{{password}}">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+              
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-nouveaupassword">nouveau password</label>
+                    <input type="text" [(ngModel)]="profile.prenom" id="input-nouveaupassword"  class="form-control form-control-alternative" placeholder="Nouveau password" value="{{password}}">
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-repassword">repassword</label>
+                    <input type="text" [(ngModel)]="profile.prenom" id="input-repassword"  class="form-control form-control-alternative" placeholder="repassword" value="{{repassword}}">
+                  </div>
+                </div>
+              </div>
+            <!-- Description -->
+           <!--  <h6 class="heading-small text-muted mb-4">About me</h6>
+            <div class="pl-lg-4">
+              <div class="form-group">
+                <label>About Me</label>
+                <textarea rows="4" class="form-control form-control-alternative" placeholder="A few words about you ...">A beautiful Dashboard for Bootstrap 4. It is Free and Open Source.</textarea>
+              </div>
+            </div> -->
+       
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
